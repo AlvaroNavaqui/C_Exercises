@@ -47,6 +47,7 @@ typedef struct{
     int jumps;
 }ANIMAL;
 
+
 //Printing map function. Inputs are used to print each entity inside the map.
 void printMap(ANIMAL Animal, DISH Food);
 
@@ -70,6 +71,7 @@ void hidecursor();
 
 //Final game screen. Pretty Shabby.
 void endGame(int cont);
+
 
 int main()
 {
@@ -114,7 +116,6 @@ void printMap(ANIMAL Animal, DISH Dish){
             }
             else
                 printf("%c", 219); //If it's not in radius, print this char -> █ .
-
         }
         printf("\n");
     }
@@ -143,8 +144,8 @@ void animalSetUp(ANIMAL* Animal){
 
     Animal->pfp = (char)1; // This char -> ☺ .
     Animal->jumps = 0; // Set number of jumps to 0.
-
 }
+
 void movement(ANIMAL* Animal){
         Animal->dir = getch();
         switch(Animal->dir){
@@ -189,8 +190,6 @@ void movement(ANIMAL* Animal){
             Animal->NewX = Animal->X;
             Animal->NewY = Animal->Y;
         }
-
-
 }
 
 void endGame(int cont){
